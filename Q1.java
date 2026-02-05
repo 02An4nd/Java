@@ -1,14 +1,23 @@
-import java.util.Arrays;
-class Solution {
-    public int findDuplicate(int[] nums) {
-        Arrays.sort(nums);
-        for(int i =1; i<nums.length;i++) {
-          
-            if(nums[i]==nums[i-1]) {
-              return nums[i];  
-            }
-           
+import java.util.Scanner;
+class Q1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+          double price1 = sc.nextDouble();
+          int quantity1 = sc.nextInt();
+        
+          double price2 = sc.nextDouble();
+          int quantity2 = sc.nextInt();
+          double TotalBill = (price1*quantity1) + (price2*quantity2);
+        
+        if(TotalBill >= 5000) {
+            TotalBill = TotalBill - (0.1*TotalBill);
         }
-       return -1;
+        else if(TotalBill >= 2000) {
+          TotalBill = TotalBill - (0.05*TotalBill);
+        }
+
+    TotalBill = TotalBill + (TotalBill*0.18);
+
+    System.out.println("Final Payable Amount is : " + TotalBill);
     }
 }
